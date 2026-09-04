@@ -1,0 +1,50 @@
+name: Publicar site
+
+on:
+  # Publica quando você aprova conteúdo e ele é enviado pro GitHub (push na branch main)
+  push:
+    branches: [main]
+  # Publica sozinho todo dia às 9h de Brasília (12:00 UTC), liberando o próximo
+  # post da fila cuja data (pubDate) já chegou
+  schedule:
+    - cron: '0 12 * * *'
+  # Permite disparar manualmente pela aba "Actions" do GitHub, se precisar
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o código do repositório
+        uses: actions/checkout@v4
+
+      - name: Preparar o GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Instalar dependências e gerar o site
+        uses: withastro/action@v3
+
+      - name: Enviar o site gerado como artefato do Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

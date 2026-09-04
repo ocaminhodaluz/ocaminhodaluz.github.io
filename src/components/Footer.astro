@@ -1,0 +1,36 @@
+---
+import { SITE_TITLE, TIKTOK_HANDLE, TIKTOK_SHOP_URL } from '../consts';
+const today = new Date();
+---
+
+<footer>
+	&copy; {today.getFullYear()} {SITE_TITLE}. Todos os direitos reservados.
+	<div class="social-links">
+		<a href={TIKTOK_SHOP_URL} target="_blank" rel="noopener noreferrer">TikTok {TIKTOK_HANDLE}</a>
+		<a href="https://www.instagram.com/caminhodaluz_11" target="_blank" rel="noopener noreferrer"
+			>Instagram {TIKTOK_HANDLE}</a
+		>
+	</div>
+</footer>
+<style>
+	footer {
+		padding: 2em 1em 6em 1em;
+		background: linear-gradient(var(--gray-gradient)) no-repeat;
+		color: rgb(var(--gray));
+		text-align: center;
+	}
+	.social-links {
+		display: flex;
+		justify-content: center;
+		gap: 1.5em;
+		margin-top: 1em;
+	}
+	.social-links a {
+		text-decoration: none;
+		color: rgb(var(--gray));
+		font-weight: 600;
+	}
+	.social-links a:hover {
+		color: rgb(var(--gray-dark));
+	}
+</style>

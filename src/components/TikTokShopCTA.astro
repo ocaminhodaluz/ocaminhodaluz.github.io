@@ -1,0 +1,61 @@
+---
+import { TIKTOK_SHOP_URL } from '../consts';
+
+interface Props {
+	// Link do produto específico (opcional). Se não passar, usa o link padrão da loja.
+	href?: string;
+	// Texto do produto/oferta que aparece na chamada.
+	text?: string;
+}
+
+const { href = TIKTOK_SHOP_URL, text = 'Confira os produtos que uso pra isso na minha loja' } =
+	Astro.props;
+---
+
+<a class="tiktok-shop-cta" href={href} target="_blank" rel="noopener noreferrer sponsored">
+	<span class="icon">🛍️</span>
+	<span class="text">
+		<strong>{text}</strong>
+		<span class="subtext">Loja no TikTok Shop — Caminho da Luz</span>
+	</span>
+	<span class="arrow">→</span>
+</a>
+
+<style>
+	.tiktok-shop-cta {
+		display: flex;
+		align-items: center;
+		gap: 0.75em;
+		margin: 2em 0;
+		padding: 1em 1.25em;
+		background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+		color: white;
+		border-radius: 14px;
+		text-decoration: none;
+		box-shadow: var(--box-shadow);
+		transition: transform 0.15s ease;
+	}
+	.tiktok-shop-cta:hover {
+		transform: translateY(-2px);
+		color: white;
+	}
+	.icon {
+		font-size: 1.8em;
+		line-height: 1;
+	}
+	.text {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
+	.text strong {
+		font-size: 1.05em;
+	}
+	.subtext {
+		font-size: 0.8em;
+		opacity: 0.85;
+	}
+	.arrow {
+		font-size: 1.5em;
+	}
+</style>
