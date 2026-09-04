@@ -32,6 +32,8 @@ jobs:
 
       - name: Instalar dependências e gerar o site
         uses: withastro/action@v3
+        with:
+          node-version: 22
 
       - name: Enviar o site gerado como artefato do Pages
         uses: actions/upload-pages-artifact@v3
