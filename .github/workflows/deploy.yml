@@ -30,15 +30,13 @@ jobs:
       - name: Preparar o GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Instalar dependências e gerar o site
+      # Essa action já instala as dependências, gera o site e envia o
+      # resultado como artefato do Pages sozinha (não precisa de um passo
+      # separado de upload-pages-artifact depois).
+      - name: Instalar dependências, gerar e preparar o site pro Pages
         uses: withastro/action@v3
         with:
           node-version: 22
-
-      - name: Enviar o site gerado como artefato do Pages
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
 
   deploy:
     needs: build
