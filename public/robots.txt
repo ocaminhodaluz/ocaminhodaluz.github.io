@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ocaminhodaluz.com.br/sitemap-index.xml

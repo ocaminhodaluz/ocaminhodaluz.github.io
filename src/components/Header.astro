@@ -1,11 +1,18 @@
 ---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
 import { SITE_TITLE, TIKTOK_SHOP_URL } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
 
 <header>
 	<nav>
-		<h2><a href="/">✨ {SITE_TITLE}</a></h2>
+		<h2>
+			<a href="/" class="brand">
+				<Image src={logo} alt="" width={40} height={28} />
+				{SITE_TITLE}
+			</a>
+		</h2>
 		<div class="internal-links">
 			<HeaderLink href="/">Início</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
@@ -33,6 +40,15 @@ import HeaderLink from './HeaderLink.astro';
 	h2 a,
 	h2 a.active {
 		text-decoration: none;
+	}
+	.brand {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+	}
+	.brand img {
+		height: 28px;
+		width: auto;
 	}
 	nav {
 		display: flex;
