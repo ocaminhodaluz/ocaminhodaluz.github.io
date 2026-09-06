@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/BlogPost.astro';
+---
+
+<Layout
+	title="Compêndio de Ervas para Rituais"
+	description="Usos, significados e cuidados de segurança das ervas mais usadas em limpeza energética e proteção."
+	category="Compêndio"
+	pubDate={new Date('2026-09-06')}
+>
+	<style>
+		dl.ervas {
+			margin: 1.5em 0;
+		}
+		dl.ervas dt {
+			font-weight: 700;
+			margin-top: 1em;
+			color: var(--accent-dark);
+		}
+		dl.ervas dd {
+			margin: 0.25em 0 0 0;
+		}
+		.aviso {
+			margin: 2em 0;
+			padding: 1em 1.25em;
+			background: rgb(var(--gray-light));
+			border-radius: 12px;
+			font-size: 0.95em;
+		}
+	</style>
+	<p>
+		Referência rápida das ervas mais usadas nos rituais do blog — o que cada uma representa e como
+		usar com segurança. Esta lista cresce conforme novos posts são publicados.
+	</p>
+	<dl class="ervas">
+		<dt>Sal grosso</dt>
+		<dd>
+			Absorve energias densas do ambiente. Usado espalhado nos cantos da casa ou dissolvido em água
+			para banho de fechamento do corpo.
+		</dd>
+		<dt>Arruda</dt>
+		<dd>Proteção contra inveja e olho gordo. Usada em banho (fervida em água) ou defumação.</dd>
+		<dt>Guiné</dt>
+		<dd>Reforça o corte de energias negativas direcionadas a alguém. Usada em banho, junto com a arruda.</dd>
+		<dt>Alecrim</dt>
+		<dd>Abre caminhos e renova a energia do ambiente. Usado em defumação ou infusão para banho.</dd>
+		<dt>Palo santo</dt>
+		<dd>
+			Madeira sagrada peruana usada em defumação, tanto do ambiente quanto do corpo. Alternativa aos
+			incensos tradicionais.
+		</dd>
+	</dl>
+	<div class="aviso">
+		<strong>Aviso de segurança:</strong> nem toda erva ou planta pode entrar em contato com a pele ou
+		ser ingerida. O <strong>comigo-ninguém-pode</strong>, por exemplo, tem seiva tóxica e irritante —
+		na tradição, ele é mantido como planta em vaso na entrada de casa ou do trabalho, nunca usado em
+		banho. Na dúvida sobre uma erva específica, pesquise antes de usar em contato com o corpo.
+	</div>
+</Layout>

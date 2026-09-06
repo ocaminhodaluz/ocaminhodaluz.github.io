@@ -1,0 +1,66 @@
+---
+import Layout from '../../layouts/BlogPost.astro';
+
+const arcanosMaiores = [
+	['0 — O Louco', 'Novos começos, espontaneidade, um salto de fé rumo ao desconhecido.'],
+	['I — O Mago', 'Habilidade e iniciativa: o poder de transformar ideias em ação.'],
+	['II — A Sacerdotisa', 'Intuição, mistério, sabedoria que vem do silêncio interior.'],
+	['III — A Imperatriz', 'Abundância, criatividade e fertilidade em todos os sentidos.'],
+	['IV — O Imperador', 'Estrutura, autoridade e disciplina para construir algo sólido.'],
+	['V — O Hierofante', 'Tradição e aprendizado, orientação através de crenças estabelecidas.'],
+	['VI — Os Enamorados', 'Escolhas e união, alinhamento entre coração e valores.'],
+	['VII — O Carro', 'Determinação: avanço com foco apesar de forças opostas.'],
+	['VIII — A Força', 'Coragem serena, domínio sobre os próprios impulsos.'],
+	['IX — O Eremita', 'Introspecção, busca por respostas dentro de si, solidão que ensina.'],
+	['X — A Roda da Fortuna', 'Ciclos, mudança inevitável, reviravoltas do destino.'],
+	['XI — A Justiça', 'Equilíbrio, causa e efeito, decisões justas.'],
+	['XII — O Enforcado', 'Pausa, novo ponto de vista, entrega ao momento presente.'],
+	['XIII — A Morte', 'Fim de um ciclo, transformação profunda, espaço para o novo.'],
+	['XIV — A Temperança', 'Moderação e paciência, mistura equilibrada de opostos.'],
+	['XV — O Diabo', 'Apego e ilusões: amarras que a própria pessoa pode romper.'],
+	['XVI — A Torre', 'Ruptura súbita, revelação que derruba estruturas falsas.'],
+	['XVII — A Estrela', 'Esperança e renovação, fé depois de um momento difícil.'],
+	['XVIII — A Lua', 'Incertezas e emoções profundas, aquilo que ainda não está claro.'],
+	['XIX — O Sol', 'Vitalidade, clareza e alegria genuína.'],
+	['XX — O Julgamento', 'Despertar, avaliação de uma trajetória, chamado para renascer.'],
+	['XXI — O Mundo', 'Realização, ciclo completo, sensação de plenitude.'],
+];
+---
+
+<Layout
+	title="Compêndio de Tarot: os 22 Arcanos Maiores"
+	description="Significado de cada um dos 22 Arcanos Maiores do tarot, explicados de forma simples para consulta rápida."
+	category="Compêndio"
+	pubDate={new Date('2026-09-06')}
+>
+	<style>
+		dl.arcanos {
+			margin: 1.5em 0;
+		}
+		dl.arcanos dt {
+			font-weight: 700;
+			margin-top: 1em;
+			color: var(--accent-dark);
+		}
+		dl.arcanos dd {
+			margin: 0.25em 0 0 0;
+		}
+	</style>
+	<p>
+		O baralho de tarot tem 78 cartas: 22 Arcanos Maiores e 56 Arcanos Menores. Os Arcanos Maiores
+		são o ponto de partida recomendado pra quem está aprendendo — veja no
+		<a href="/blog/tarot-para-iniciantes-como-comecar-do-zero">post de tarot para iniciantes</a>
+		por que vale começar por eles. Abaixo está o significado resumido de cada um. Os 56 Arcanos
+		Menores serão adicionados aqui aos poucos.
+	</p>
+	<dl class="arcanos">
+		{
+			arcanosMaiores.map(([nome, significado]) => (
+				<>
+					<dt>{nome}</dt>
+					<dd>{significado}</dd>
+				</>
+			))
+		}
+	</dl>
+</Layout>

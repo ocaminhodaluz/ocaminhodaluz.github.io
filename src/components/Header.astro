@@ -16,6 +16,15 @@ import HeaderLink from './HeaderLink.astro';
 		<div class="internal-links">
 			<HeaderLink href="/">Início</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
+			<details class="dropdown">
+				<summary>Compêndio</summary>
+				<div class="dropdown-menu">
+					<a href="/compendio">Visão geral</a>
+					<a href="/compendio/ervas">Ervas</a>
+					<a href="/compendio/tarot">Tarot</a>
+					<a href="/compendio/cristais">Cristais</a>
+				</div>
+			</details>
 			<HeaderLink href="/about">Sobre</HeaderLink>
 		</div>
 		<div class="shop-link">
@@ -65,6 +74,48 @@ import HeaderLink from './HeaderLink.astro';
 	nav a.active {
 		text-decoration: none;
 		border-bottom-color: var(--accent);
+	}
+	.dropdown {
+		position: relative;
+		display: inline-block;
+	}
+	.dropdown summary {
+		padding: 1em 0.5em;
+		color: var(--black);
+		cursor: pointer;
+		list-style: none;
+	}
+	.dropdown summary::-webkit-details-marker,
+	.dropdown summary::marker {
+		display: none;
+		content: '';
+	}
+	.dropdown summary::after {
+		content: ' ▾';
+	}
+	.dropdown[open] summary::after {
+		content: ' ▴';
+	}
+	.dropdown-menu {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		min-width: 160px;
+		padding: 0.5em 0;
+		background: white;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+		z-index: 10;
+	}
+	.dropdown-menu a {
+		display: block;
+		padding: 0.5em 1em;
+		color: var(--black);
+		text-decoration: none;
+	}
+	.dropdown-menu a:hover {
+		background: rgb(var(--gray-light));
+		color: var(--accent);
 	}
 	.shop-button {
 		display: inline-block;
