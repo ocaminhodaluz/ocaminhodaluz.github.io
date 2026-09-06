@@ -5,8 +5,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
-import TikTokShopCTA from '../components/TikTokShopCTA.astro';
-import ShopeeCTA from '../components/ShopeeCTA.astro';
+import ShopCTAs from '../components/ShopCTAs.astro';
 
 // category é obrigatório nos posts do blog, mas opcional aqui porque este
 // layout também é reaproveitado pela página "Sobre", que não tem categoria.
@@ -104,8 +103,7 @@ const {
 						<hr />
 					</div>
 					<slot />
-					<TikTokShopCTA href={tiktokShopLink} />
-					<ShopeeCTA href={shopeeLink} />
+					<ShopCTAs tiktokHref={tiktokShopLink} shopeeHref={shopeeLink} />
 				</div>
 			</article>
 		</main>
