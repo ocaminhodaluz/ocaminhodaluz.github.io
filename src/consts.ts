@@ -9,3 +9,9 @@ export const SITE_DESCRIPTION =
 // específico de produto no frontmatter (tiktokShopLink).
 export const TIKTOK_SHOP_URL = 'https://www.tiktok.com/@caminhodaluz_11';
 export const TIKTOK_HANDLE = '@caminhodaluz_11';
+
+// Link de afiliado da Shopee (busca "kit limpeza energética"), usado quando um
+// post não define um link mais específico no frontmatter (shopeeLink). Gerado
+// em "Link personalizado" no painel de Afiliados Shopee — qualquer compra feita
+// na sessão gera comissão, não só o produto buscado.
+export const SHOPEE_URL = 'https://s.shopee.com.br/2VrW7N0GBD';

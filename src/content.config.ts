@@ -19,6 +19,9 @@ const blog = defineCollection({
 			// Link específico do TikTok Shop pra esse post (produto relacionado ao assunto).
 			// Se não informado, o componente <TikTokShopCTA /> usa o link padrão da loja.
 			tiktokShopLink: z.string().url().optional(),
+			// Link de afiliado Shopee específico pra esse post (categoria/produto diferente).
+			// Se não informado, o componente <ShopeeCTA /> usa o link padrão (SHOPEE_URL).
+			shopeeLink: z.string().url().optional(),
 		}),
 });
 
